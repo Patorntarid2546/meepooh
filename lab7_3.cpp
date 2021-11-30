@@ -1,15 +1,12 @@
-#include<iostream>
-
-using namespace std;
-
-
-int main(){
-  cout << adiff(180,270);
-  cout << adiff(210,45);
-  cout << adiff(0,360);
-  cout << adiff(10,350);
-  cout << adiff(95,260);
-  cout << adiff(90,-90);
-  cout << adiff(1000,280);
-  cout << adiff(60,244);
+int adiff(int M,int N){
+  int o;
+  M %= 360,N %= 360;
+  if (M < 0){M += 360;}
+  if (N < 0){N += 360;}
+  if (M > N){o = M - N;}
+  else{o = N - M;}
+  if (o > 180){
+      o = 360 - o;
+  }
+  return o;
 }
